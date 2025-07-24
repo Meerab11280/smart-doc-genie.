@@ -87,11 +87,11 @@ elif doc_type == "Experience Certificate":
     user_inputs["position"] = st.text_input("Position")
 
 elif doc_type == "Freelance Contract":
-    user_inputs["freelancer"] = st.text_input("Freelancer Name")
-    user_inputs["client"] = st.text_input("Client Name")
-    user_inputs["service"] = st.text_input("Service Description")
+    user_inputs["freelancer_name"] = st.text_input("Freelancer Name")
+    user_inputs["client_name"] = st.text_input("Client Name")
+    user_inputs["services"] = st.text_input("Service Description")
     user_inputs["deadline"] = st.text_input("Deadline")
-    user_inputs["amount"] = st.text_input("Payment Amount")
+    user_inputs["payment_amount"] = st.text_input("Payment Amount")
 
 elif doc_type == "Resignation Letter":
     user_inputs["name"] = st.text_input("Your Name")
@@ -106,8 +106,8 @@ elif doc_type == "Rental Agreement":
     user_inputs["rent"] = st.text_input("Monthly Rent")
     user_inputs["duration"] = st.text_input("Rental Duration")
 
-# Generate Button
 if st.button("Generate Document"):
+    # Check all fields filled
     if all(user_inputs.values()):
         if doc_type == "Curriculum Vitae (CV)":
             content = generate_cv(user_inputs)
