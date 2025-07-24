@@ -110,31 +110,31 @@ elif doc_type == "Rental Agreement":
 if st.button("Generate Document"):
     if all(user_inputs.values()):
         if doc_type == "Curriculum Vitae (CV)":
-            content = generate_cv(**user_inputs)
+            content = generate_cv(user_inputs)
         elif doc_type == "Leave Application":
-            content = generate_leave_application(**user_inputs)
+            content = generate_leave_application(user_inputs)
         elif doc_type == "Job Application":
-            content = generate_job_application(**user_inputs)
+            content = generate_job_application(user_inputs)
         elif doc_type == "Further Study Application":
-            content = generate_further_study_application(**user_inputs)
+            content = generate_further_study_application(user_inputs)
         elif doc_type == "Character Certificate":
-            content = generate_character_certificate(**user_inputs)
+            content = generate_character_certificate(user_inputs)
         elif doc_type == "Internship Application":
-            content = generate_internship_application(**user_inputs)
+            content = generate_internship_application(user_inputs)
         elif doc_type == "Bank Account Opening Application":
-            content = generate_bank_account_application(**user_inputs)
+            content = generate_bank_account_application(user_inputs)
         elif doc_type == "Fee Concession Application":
-            content = generate_fee_concession_application(**user_inputs)
+            content = generate_fee_concession_application(user_inputs)
         elif doc_type == "Examination Center Change Application":
-            content = generate_center_change_application(**user_inputs)
+            content = generate_center_change_application(user_inputs)
         elif doc_type == "Experience Certificate":
-            content = generate_experience_certificate(**user_inputs)
+            content = generate_experience_certificate(user_inputs)
         elif doc_type == "Freelance Contract":
-            content = generate_freelance_contract(**user_inputs)
+            content = generate_freelance_contract(user_inputs)
         elif doc_type == "Resignation Letter":
-            content = generate_resignation_letter(**user_inputs)
+            content = generate_resignation_letter(user_inputs)
         elif doc_type == "Rental Agreement":
-            content = generate_rental_agreement(**user_inputs)
+            content = generate_rental_agreement(user_inputs)
 
         st.subheader("📄 Generated Document")
         st.code(content, language="markdown")
@@ -148,4 +148,3 @@ if st.button("Generate Document"):
         )
     else:
         st.warning("Please fill all the fields.")
-
